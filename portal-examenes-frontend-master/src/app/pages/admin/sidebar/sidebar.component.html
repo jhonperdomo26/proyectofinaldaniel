@@ -1,0 +1,17 @@
+<mat-card>
+  <mat-action-list>
+    <div mat-subheader>{{ 'menu' | translate }}</div>
+    <button routerLink="/admin" mat-list-item>
+      <mat-icon mat-list-icon>home</mat-icon> {{ 'home' | translate }}
+    </button>
+    <button mat-list-item routerLink="/admin/profile">
+      <mat-icon mat-list-icon>account_circle</mat-icon> {{ 'profile' | translate }}
+    </button>
+    <button mat-list-item routerLink="/admin/usuarios">
+      <mat-icon mat-list-icon>account_circle</mat-icon> {{ 'accounts' | translate }}
+    </button>
+    <button mat-list-item (click)="logout()">
+      <mat-icon mat-list-icon>logout</mat-icon> {{ 'logout' | translate }}
+    </button>
+  </mat-action-list>
+</mat-card>

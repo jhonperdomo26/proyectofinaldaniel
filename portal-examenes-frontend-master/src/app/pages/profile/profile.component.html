@@ -1,0 +1,51 @@
+<mat-card style="margin-left: 10px;">
+  <h1>{{ 'profile_details' | translate }}</h1>
+  <mat-card-content>
+    <div class="bootstrap-wrapper">
+      <div class="container">
+        <div class="text-center">
+          <img
+            src="../../../assets/veterinary.gif"
+            width="200"
+            height="200"
+            alt=""
+            class="profile-image"
+          />
+
+          <h1 class="mt20">{{ user.nombre }} {{ user.apellido }}</h1>
+        </div>
+        <div class="row">
+          <div class="col-md-10 offset-md-1">
+            <table class="table text-center">
+              <tr>
+                <td>{{ 'username' | translate }}</td>
+                <td>{{ user.username }}</td>
+              </tr>
+              <tr>
+                <td>{{ 'id' | translate }}</td>
+                <td>{{ user.id }}</td>
+              </tr>
+              <tr>
+                <td>{{ 'phone' | translate }}</td>
+                <td>{{ user.telefono }}</td>
+              </tr>
+              <tr>
+                <td>{{ 'role' | translate }}</td>
+                <td>{{ user.authorities[0].authority }}</td>
+              </tr>
+              <tr>
+                <td>{{ 'status' | translate }}</td>
+                <td>{{ user.enabled ? ('active' | translate) : ('inactive' | translate) }}</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <mat-card-actions class="text-center">
+      <button mat-button color="primary" (click)="verDetalle()">
+        {{ 'view' | translate }}
+      </button>
+    </mat-card-actions>
+  </mat-card-content>
+</mat-card>

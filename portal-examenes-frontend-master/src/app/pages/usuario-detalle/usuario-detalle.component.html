@@ -1,0 +1,13 @@
+<h1 mat-dialog-title>{{ 'user_details' | translate }}</h1>
+<div mat-dialog-content>
+  <p><strong>{{ 'id' | translate }}:</strong> {{ data.id }}</p>
+  <p><strong>{{ 'name' | translate }}:</strong> {{ data.nombre }}</p>
+  <p><strong>{{ 'last_name' | translate }}:</strong> {{ data.apellido }}</p>
+  <p><strong>{{ 'username' | translate }}:</strong> {{ data.username }}</p>
+  <p><strong>{{ 'email' | translate }}:</strong> {{ data.email }}</p>
+  <p><strong>{{ 'phone' | translate }}:</strong> {{ data.telefono }}</p>
+  <p><strong>{{ 'status' | translate }}:</strong> {{ data.enabled ? ('active' | translate) : ('inactive' | translate) }}</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>{{ 'close' | translate }}</button>
+</div>

@@ -1,0 +1,36 @@
+<h1 mat-dialog-title>{{ 'edit_user' | translate }}</h1>
+<div mat-dialog-content>
+  <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <mat-label>{{ 'name' | translate }}</mat-label>
+      <input matInput formControlName="nombre">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>{{ 'last_name' | translate }}</mat-label>
+      <input matInput formControlName="apellido">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>{{ 'username' | translate }}</mat-label>
+      <input matInput formControlName="username">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>{{ 'email' | translate }}</mat-label>
+      <input matInput formControlName="email">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>{{ 'phone' | translate }}</mat-label>
+      <input matInput formControlName="telefono">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>{{ 'status' | translate }}</mat-label>
+      <mat-select formControlName="enabled">
+        <mat-option [value]="true">{{ 'active' | translate }}</mat-option>
+        <mat-option [value]="false">{{ 'inactive' | translate }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div mat-dialog-actions>
+      <button mat-button mat-dialog-close>{{ 'cancel' | translate }}</button>
+      <button mat-button type="submit" [disabled]="editForm.invalid">{{ 'save' | translate }}</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,36 @@
+<app-navbar></app-navbar>
+<div class = "bootstrap-wrapper">
+  <div class = "container">
+    <div class = "row mt20">
+      <div class = "col-md-6 offset-md-3">
+        <mat-card>
+          <div class="container text-center">
+            <img src="../../../assets/sign.gif" width="100" height="100">
+          </div>
+          
+
+          <h1 class = "text-center">{{ 'text21' | translate }}</h1>
+          <form (ngSubmit) = "formSubmit()">
+            <mat-form-field class = "full-width"  appearance = "outline">
+              <mat-label>{{ 'text22' | translate }}</mat-label>
+              <input [(ngModel)] = "loginData.username" name = "username" required  matInput placeholder="{{ 'text23' | translate }}">
+              <mat-hint>{{ 'text24' | translate }}</mat-hint>
+            </mat-form-field>
+            <mat-form-field class="full-width"  appearance = "outline">
+              <mat-label>{{ 'text25' | translate }}</mat-label>
+              <input [(ngModel)] = "loginData.password" name = "password" required  type="password" matInput placeholder="{{ 'text26' | translate }}">
+              <mat-hint>{{ 'text27' | translate }}</mat-hint>
+            </mat-form-field>
+
+            <br><br>
+
+            <div class = "container text-center">
+              <button type = "submit" mat-raised-button color="primary">{{ 'text28' | translate }}</button>
+              <button type="reset" style = "margin-left: 20px;" mat-raised-button color="accent">{{ 'text29' | translate }}</button>
+            </div>
+          </form>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

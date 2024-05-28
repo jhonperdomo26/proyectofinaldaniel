@@ -1,0 +1,56 @@
+<div class="container">
+  <h1>{{ 'user_list' | translate }}</h1>
+  <mat-table [dataSource]="usuarios" class="mat-elevation-z8">
+
+    <!-- Nombre Column -->
+    <ng-container matColumnDef="nombre">
+      <mat-header-cell *matHeaderCellDef> {{ 'name' | translate }} </mat-header-cell>
+      <mat-cell *matCellDef="let usuario"> {{ usuario.nombre }} </mat-cell>
+    </ng-container>
+
+    <!-- Apellido Column -->
+    <ng-container matColumnDef="apellido">
+      <mat-header-cell *matHeaderCellDef> {{ 'last_name' | translate }} </mat-header-cell>
+      <mat-cell *matCellDef="let usuario"> {{ usuario.apellido }} </mat-cell>
+    </ng-container>
+
+    <!-- Username Column -->
+    <ng-container matColumnDef="username">
+      <mat-header-cell *matHeaderCellDef> {{ 'username' | translate }} </mat-header-cell>
+      <mat-cell *matCellDef="let usuario"> {{ usuario.username }} </mat-cell>
+    </ng-container>
+
+    <!-- Email Column -->
+    <ng-container matColumnDef="email">
+      <mat-header-cell *matHeaderCellDef> {{ 'email' | translate }} </mat-header-cell>
+      <mat-cell *matCellDef="let usuario"> {{ usuario.email }} </mat-cell>
+    </ng-container>
+
+    <!-- Teléfono Column -->
+    <ng-container matColumnDef="telefono">
+      <mat-header-cell *matHeaderCellDef> {{ 'phone' | translate }} </mat-header-cell>
+      <mat-cell *matCellDef="let usuario"> {{ usuario.telefono }} </mat-cell>
+    </ng-container>
+
+    <!-- Estado Column -->
+    <ng-container matColumnDef="enabled">
+      <mat-header-cell *matHeaderCellDef> {{ 'status' | translate }} </mat-header-cell>
+      <mat-cell *matCellDef="let usuario"> {{ usuario.enabled ? ('active' | translate) : ('inactive' | translate) }} </mat-cell>
+    </ng-container>
+
+    <!-- Acciones Column -->
+    <ng-container matColumnDef="acciones">
+      <mat-header-cell *matHeaderCellDef> {{ 'actions' | translate }} </mat-header-cell>
+      <mat-cell *matCellDef="let usuario">
+        <div class="acciones-container">
+          <button mat-button color="primary" (click)="verDetalle(usuario)"> {{ 'view' | translate }} </button>
+          <button mat-button color="accent" (click)="editarUsuario(usuario)"> {{ 'edit' | translate }} </button>
+          <button mat-button color="warn" (click)="eliminarUsuario(usuario.id)"> {{ 'delete' | translate }} </button>
+        </div>
+      </mat-cell>
+    </ng-container>
+    
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>
